@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loan Prediction App</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<br>
+  <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">HOME LOAN EXAMPLE DATA</a>
+  </li>
+</ul>
+<br>
+<table class="table table-striped table-WHITE">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Education</th>
+      <th scope="col">Self_Employed</th>
+      <th scope="col">ApplicantIncome</th>
+      <th scope="col">CoapplicantIncome</th>
+      <th scope="col">LoanAmount</th>
+      <th scope="col">Credit_History</th>
+      <th scope="col">OUTPUT</th>
+   
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>12000</td>
+      <td>5000</td>
+      <td>460</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>1</td>
+      <td>0</td>
+      <td>120</td>
+      <td>50</td>
+      <td>4600</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1200</td>
+      <td>5000</td>
+      <td>46000</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">CHECK U R HOME LOAN PREDICTION WITH 71% ACCURACY </a>
+  </li>
+</ul>
+<br><br>
+
+<form action="{{ url_for('predict')}}"method="post">
+<table class="table table-striped table-BLUE">
+  <thead>
+    <tr>
+     
+<th scope="col"><input type="text" name="Education" placeholder="Education" required="required" /></th>
+<th scope="col"><input type="text" name="Self_Employed" placeholder="Self_Employed" required="required" /></th>
+<th scope="col"><input type="text" name="ApplicantIncome" placeholder="ApplicantIncome" required="required" /></th>
+<th scope="col"><input type="text" name="CoapplicantIncome" placeholder="CoapplicantIncome" required="required" /></th>
+
+<th scope="col"><input type="text" name="LoanAmount" placeholder="LoanAmount" required="required" /></th>
+<th scope="col"><input type="text" name="Credit_History" placeholder="Credit_History" required="required" /></th>
+  </tr>
+  </tbody>
+</table>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#"><button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></a>
+  </li>
+</ul>
+</form>
+
+<br>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">
+  {{ prediction_text }}
+</a>
+  </li>
+</ul>
+<br>
+
+   <h4 class='align-centre'> '1' indicates Eligible, <br> '0' indicates Not-Eligible</h4>
+
+</body>
+</html>
